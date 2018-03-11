@@ -13,6 +13,7 @@ import com.lasalle.mdpa.busybudgeter.manager.impl.BudgetManagerImpl;
 import com.lasalle.mdpa.busybudgeter.manager.impl.UserManagerImpl;
 import com.lasalle.mdpa.busybudgeter.network.BudgetRestAPI;
 import com.lasalle.mdpa.busybudgeter.network.impl.BudgetRestApiOkHttp;
+import com.lasalle.mdpa.busybudgeter.network.impl.BudgetRestApiRetrofit;
 import com.lasalle.mdpa.busybudgeter.network.impl.BudgetRestApiVolley;
 
 import okhttp3.OkHttpClient;
@@ -37,7 +38,7 @@ public class BudgetingApplication extends Application {
             bind(UserManager.class).to(UserManagerImpl.class);
             bind(BudgetingDatabase.class).toInstance(createBudgetingDatabaseInstance());
             bind(RequestQueue.class).toInstance(Volley.newRequestQueue(application));
-            bind(BudgetRestAPI.class).to(BudgetRestApiOkHttp.class);
+            bind(BudgetRestAPI.class).toInstance(new BudgetRestApiRetrofit());
             bind(BudgetManager.class).to(BudgetManagerImpl.class);
             bind(OkHttpClient.class).toInstance(new OkHttpClient());
             bind(Gson.class).toInstance(new Gson());

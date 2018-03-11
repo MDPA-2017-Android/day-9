@@ -78,4 +78,10 @@ dependencies {
 
     // OKHttp
     compile 'com.squareup.okhttp3:okhttp:3.10.0'
+
+    // Retrofit (also includes OkHttp)
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+
+    // JSON Converter
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
 }
