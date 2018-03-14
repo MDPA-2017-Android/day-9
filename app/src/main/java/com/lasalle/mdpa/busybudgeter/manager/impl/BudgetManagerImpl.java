@@ -1,24 +1,15 @@
 package com.lasalle.mdpa.busybudgeter.manager.impl;
 
 import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.Transformations;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.util.Log;
 
 import com.lasalle.mdpa.busybudgeter.database.BudgetingDatabase;
 import com.lasalle.mdpa.busybudgeter.database.entity.Budget;
 import com.lasalle.mdpa.busybudgeter.manager.BudgetManager;
 import com.lasalle.mdpa.busybudgeter.network.BudgetRestAPI;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import java.time.Instant;
-import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -58,7 +49,6 @@ public class BudgetManagerImpl implements BudgetManager {
     {
         budgetRestAPI.fetchList(budgets -> {
             // insert into database
-
             Budget[] budgetArray = new Budget[budgets.size()];
             budgetArray = budgets.toArray(budgetArray);
 
