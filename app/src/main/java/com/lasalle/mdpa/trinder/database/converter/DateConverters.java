@@ -1,4 +1,4 @@
-package com.lasalle.mdpa.trinder.database.converters;
+package com.lasalle.mdpa.trinder.database.converter;
 
 import android.arch.persistence.room.TypeConverter;
 

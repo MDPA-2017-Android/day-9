@@ -4,7 +4,7 @@ import android.arch.persistence.room.Database;
 import android.arch.persistence.room.RoomDatabase;
 import android.arch.persistence.room.TypeConverters;
 
-import com.lasalle.mdpa.trinder.database.converters.DateConverters;
+import com.lasalle.mdpa.trinder.database.converter.DateConverters;
 import com.lasalle.mdpa.trinder.model.User;
 
 /*

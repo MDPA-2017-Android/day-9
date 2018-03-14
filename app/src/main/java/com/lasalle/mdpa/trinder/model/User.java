@@ -2,34 +2,36 @@ package com.lasalle.mdpa.trinder.model;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
 
 import java.util.Date;
 
 @Entity
 public class User {
 
-    @PrimaryKey(autoGenerate = true)
-    private int id;
+    @PrimaryKey()
+    @NonNull
+    private String id;
 
-    private String name;
+    private String firstName;
     private String lastName;
     private Date birthDate;
     private String biography;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {

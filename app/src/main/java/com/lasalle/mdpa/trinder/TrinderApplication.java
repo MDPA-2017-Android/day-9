@@ -7,6 +7,8 @@ import android.content.SharedPreferences;
 
 import com.lasalle.mdpa.trinder.manager.UserManager;
 import com.lasalle.mdpa.trinder.network.AuthRest;
+import com.lasalle.mdpa.trinder.network.ProfileRest;
+import com.lasalle.mdpa.trinder.network.interceptor.AuthTokenInterceptor;
 
 import toothpick.Scope;
 import toothpick.Toothpick;
@@ -23,17 +25,8 @@ public class TrinderApplication extends Application {
 
     public void installToothPickModules(Scope scope) {
         TrinderApplication application = this;
-
         scope.installModules(new Module() {{
-            bind(AuthRest.class).toInstance(new AuthRest());
             bind(UserManager.class);
-            /*
-            bind(UserManager.class).to(UserManagerImpl.class);
-            bind(BudgetingDatabase.class).toInstance(createBudgetingDatabaseInstance());
-            bind(BudgetRestAPI.class).toInstance(new BudgetRestApiRetrofit());
-            bind(BudgetManager.class).to(BudgetManagerImpl.class);
-            bind(SharedPreferences.class).toInstance(initSharedPreferences());
-            */
         }});
     }
 
